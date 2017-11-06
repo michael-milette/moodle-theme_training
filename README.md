@@ -1,4 +1,4 @@
-<img src="pix/logo.png" align="right" />
+<p align="center"><img src="pix/screenshot.jpg" /></p>
 
 Training theme for Moodle
 ====================================
@@ -27,14 +27,15 @@ Training theme for Moodle
 
 # Basic Overview
 
-Training theme theme for Moodle is a simple and clean theme for Moodle. It includes support for:
+Training theme for Moodle is a simple and clean theme for Moodle. It includes support for:
 
-* Support for Moodle filter tags in the custom menu;
-* Large and small size logos;
+* Large and small size logo or banner;
 * Dark on light and light on dark custom menu bar;
-* Accessibility improvements;
+* Display of course list in grid view;
 * Customizable favicon;
-* Customizable CSS.
+* Customizable CSS;
+* Support for Moodle filter tags in the custom menu;
+* Accessibility improvements.
 
 IMPORTANT: Although we expect everything to work, this ALPHA release has not been fully tested in every situation. If you find a problem, please help by reporting it in the [Bug Tracker](http://github.com/michael-milette/moodle-theme_training/issues).
 
@@ -61,7 +62,7 @@ Install the plugin, like any other plugin, to the following folder:
 
 See https://docs.moodle.org/34/en/Installing_a_new_theme for details on installing Moodle plugins.
 
-In order for the themes to work, the plugin must be installed and activated.
+In order for the themes to work, it must be installed and activated.
 
 To activate, go to Site Administration > Appearance > Themes > Theme selector. Click **Change theme** next to the **Default** section. Select the Training theme and click **Save**.
 
@@ -74,8 +75,13 @@ IMPORANT: Although we expect everything to work, this ALPHA release has not been
 Configurable settings for this theme include:
 * Dark on light and light on dark custom menu bar;
 * Large and small size logos;
+* To use a banner instead of a logo;
 * Customizable favicon;
+* Display of course list in grid view;
+* Hide site pages and links to them in the navigation block on the front page. They will re-appear when in edit mode. This enables you to create public site pages without having to enable guest user access;
 * Customizable CSS.
+
+You can configure these setting by going to Site Administration > Appearance > Themes > Training.
 
 [(Back to top)](#table-of-contents)
 
@@ -121,6 +127,10 @@ http://github.com/michael-milette/moodle-theme_training
 
 IMPORANT: Although we expect everything to work, this ALPHA release has not been fully tested in every situation. If you find a problem, please help by reporting it in the [Bug Tracker](http://github.com/michael-milette/moodle-theme_training/issues).
 
+### Why does my course grid view look un-even?
+
+The optimal size for course summary images when using this theme is 540 px wide by 300 px high. With that said, there really isn't any restriction on how tall you should make an image. However, for best results, be consistent in the height and width.
+
 ### Are there any security considerations?
 
 There are no known security considerations at this time.
@@ -145,8 +155,8 @@ Michael Milette - Author and Lead Developer
 
 Some of the features we are considering for future releases include:
 
+* Fix the configurable favicon (known issue - currently only works in courses).
 * Ability to add a background image.
-* Ability to use a banner instead of a logo.
 * Ability to specify the name of the site as text (currently needs to be part of the logo).
 * More accessibility improvements.
 

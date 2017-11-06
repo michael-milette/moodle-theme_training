@@ -10,6 +10,12 @@ a.logo-container {
     display: inline-block;
     margin: 30px 0 30px 15px;
 }
+a.logo-container.banner {
+    margin: 0 0 2px 0;
+}
+a.logo-container img.logo.banner {
+    max-width: 100%;
+}
 @media screen and (max-width: 767px) {
     a.logo-container {
         margin:0 0 3px 0;
@@ -27,11 +33,6 @@ a.logo-container {
   float: none;
 }
 
-/* Hide list pages on front page. This enables us to create public site pages without having to enable guest user. */
-body#page-site-index:not(.editing) .activity.page.modtype_page {
-    display:none;
-}
-
 /* Add space after labels for radio buttons in feedback form. */
 .felement.fgroup label {
   padding-right: 30px;
@@ -42,7 +43,7 @@ body#page-course-view-topics ul.topics>li {
     background-color: #F9F9F9;
     padding: 0.01em 16px;
     margin: 20px 0;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0
     rgba(0,0,0,0.12)!important;
 }
 
@@ -53,14 +54,6 @@ body#page-course-view-topics ul.topics>li {
 /* Add space right above top of side blocks. */
 #region-pre {
  width: 80%;
-}
-
-/* Hide links to custom "Site Pages" */
-.block_navigation .type_activity.depth_3 {
-  display: none;
-}
-body.notloggedin .block_navigation .type_activity.depth_2 {
-  display: none;
 }
 
 /* Make background of side blocks white. */
@@ -198,9 +191,14 @@ div .mediaplugin.mediaplugin_videojs div {
   display: none;
 }
 
-/* Dimmed text and Links (ex: Course Forum with no new message. */
+/* Make dimmed /hidden text and links accessible. */
 a.dimmed, a.dimmed:link, a.dimmed:visited, a.dimmed_text, a.dimmed_text:link, a.dimmed_text:visited, .dimmed_text, .dimmed_text a, .dimmed_text a:link, .dimmed_text a:visited, .usersuspended, .usersuspended a, .usersuspended a:link, .usersuspended a:visited, .dimmed_category, .dimmed_category a {
     color: #696969;
+}
+
+/* Disable zebra effect on course list. */
+.courses .coursebox.even {
+    background-color: #fff;
 }
 
 /* Custom CSS Settings

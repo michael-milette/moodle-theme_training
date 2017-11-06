@@ -1,25 +1,37 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Training Theme for Moodle - http://moodle.org/
 //
-// Moodle is free software: you can redistribute it and/or modify
+// Training is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Moodle is distributed in the hope that it will be useful,
+// Training Theme for Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Training Theme for Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Training theme core renderers.
+ *
+ * @package    theme_training
+ * @copyright  2015 Frédéric Massart - FMCorz.net, 2017 TNG Consulting Inc. - www.tngconsulting.ca
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+defined('MOODLE_INTERNAL') || die;
 
 require_once($CFG->dirroot . '/theme/bootstrapbase/renderers.php');
 
 /**
- * Training core renderers.
+ * theme_training_core_renderer extends the theme_bootstrapbase_core_renderer class.
  *
- * @package    theme_training
+ * @package  theme_training
+ * @author   Frédéric Massart
+ * @author   Michael Milette
  * @copyright  2015 Frédéric Massart - FMCorz.net, 2017 TNG Consulting Inc. - www.tngconsulting.ca
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -86,14 +98,23 @@ class theme_training_core_renderer extends theme_bootstrapbase_core_renderer {
             return $this->get_home_ref($returnlink);
         }
 
-        $sitename = format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID)));
-        $image = html_writer::img($imageurl, $sitename, array('class' => 'logo'));
+        $class = 'logo';
+        if (!empty($this->page->theme->settings->banner)) {
+            $class .= ' banner';
+        }
 
+        $sitename = format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID)));
+        $image = html_writer::img($imageurl, $sitename, array('class' => $class));
+
+        $class = 'logo-container';
+        if (!empty($this->page->theme->settings->banner)) {
+            $class .= ' banner';
+        }
         if ($returnlink) {
             $logocontainer = html_writer::link(new moodle_url('/'), $image,
-                array('class' => 'logo-container', 'title' => get_string('home')));
+                    array('class' => $class, 'title' => get_string('home')));
         } else {
-            $logocontainer = html_writer::tag('span', $image, array('class' => 'logo-container'));
+            $logocontainer = html_writer::tag('span', $image, array('class' => $class));
         }
 
         return $logocontainer;
@@ -166,10 +187,10 @@ class theme_training_core_renderer extends theme_bootstrapbase_core_renderer {
     }
 
     /**
-     *  Applies Moodle filters to custom menu.
+     * Applies Moodle filters to custom menu.
      *
-     *  @param custom_menu $menu Current custom menu object.
-     *  @return Rendered custom_menu that has been filtered.
+     * @param string $custommenuitems Current custom menu object.
+     * @return Rendered custom_menu that has been filtered.
      */
     public function custom_menu($custommenuitems = '') {
         global $CFG;
@@ -181,14 +202,13 @@ class theme_training_core_renderer extends theme_bootstrapbase_core_renderer {
                     'newlines' => false,
                     'context' => context_course::instance(SITEID)
                 ));
+            // Hack: This will remove any HTML injected by other filters (like auto-linking).
+            // To do: Find a better way to avoid some filters.
+            $custommenuitems = strip_tags($custommenuitems);
         }
         $custommenu = new custom_menu($custommenuitems, current_language());
         return $this->render_custom_menu($custommenu);
     }
-
-}
-
-class theme_training_core_renderer extends core_renderer {
 
     /**
      * Returns the URL for the favicon.
@@ -196,8 +216,13 @@ class theme_training_core_renderer extends core_renderer {
      * @return string The favicon URL
      */
     public function favicon() {
+        global $CFG;
         if (!empty($this->page->theme->settings->favicon)) {
-            return $this->page->theme->setting_file_url('favicon', 'favicon');
+            $url = $this->page->theme->setting_file_url('favicon', 'favicon');
+            // Get a URL suitable for moodle_url.
+            $relativebaseurl = preg_replace('|^https?://|i', '//', $CFG->wwwroot);
+            $url = str_replace($relativebaseurl, '', $url);
+            return new moodle_url($url);
         }
         return parent::favicon();
     }

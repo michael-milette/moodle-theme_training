@@ -18,9 +18,11 @@
  * The secure layout.
  *
  * @package   theme_training
- * @copyright 2013 Moodle, moodle.org
+ * @copyright 2013 Moodle, moodle.org, 2017 TNG Consulting Inc. - www.tngconsulting.ca
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+defined('MOODLE_INTERNAL') || die;
 
 // Get the HTML for the settings bits.
 $html = theme_training_get_html_for_settings($OUTPUT, $PAGE);

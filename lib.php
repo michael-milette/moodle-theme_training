@@ -1,32 +1,28 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Training Theme for Moodle - http://moodle.org/
 //
-// Moodle is free software: you can redistribute it and/or modify
+// Training is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Moodle is distributed in the hope that it will be useful,
+// Training Theme for Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Training Theme for Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Training theme, a customized Clean child theme.
- *
- * DO NOT MODIFY THIS THEME!
- * COPY IT FIRST, THEN RENAME THE COPY AND MODIFY IT INSTEAD.
- *
- * For full information about creating Moodle themes, see:
- * http://docs.moodle.org/dev/Themes_2.0
+ * Training theme is based on the Moodle Clean theme.
  *
  * @package   theme_training
  * @copyright 2013 Moodle, moodle.org, 2017 TNG Consulting Inc. - www.tngconsulting.ca
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+defined('MOODLE_INTERNAL') || die;
 
 /**
  * Parses CSS before it is cached.
@@ -40,36 +36,58 @@
 function theme_training_process_css($css, $theme) {
     global $OUTPUT;
 
-    // Set the background image for the logo.
-    $logo = $OUTPUT->get_logo_url(null, 75);
-    $css = theme_training_set_logo($css, $logo);
-
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
         $customcss = $theme->settings->customcss;
     } else {
         $customcss = null;
     }
-    $css = theme_training_set_customcss($css, $customcss);
 
-    return $css;
-}
-
-/**
- * Adds the logo to CSS.
- *
- * @param string $css The CSS.
- * @param string $logo The URL of the logo.
- * @return string The parsed CSS
- */
-function theme_training_set_logo($css, $logo) {
-    $tag = '[[setting:logo]]';
-    $replacement = $logo;
-    if (is_null($replacement)) {
-        $replacement = '';
+    // Add CSS to display courses in grid view on front page.
+    if (!empty($theme->settings->gridview)) {
+        $customcss .= '
+            .courses:not(.frontpage-category-combo) {
+              display:flex;
+              flex-wrap: wrap;
+            }
+            .courses:not(.frontpage-category-combo) .coursebox .content .teachers,
+            .courses:not(.frontpage-category-combo) .coursebox .content .courseimage,
+            .courses:not(.frontpage-category-combo) .coursebox .content .coursefile {
+              width: 100%;
+            }
+            .courses:not(.frontpage-category-combo) .coursebox {
+              width: 359px;
+              margin-right:30px;
+              padding-right: 15px
+            }
+            .courses:not(.frontpage-category-combo) .coursebox .content {
+              display: flex;
+              flex-direction: column;
+            }
+            .courses:not(.frontpage-category-combo) .coursebox .content .summary {
+              width: 100%;
+              order: 2;
+            }
+        ';
     }
-
-    $css = str_replace($tag, $replacement, $css);
+    
+    // Add ability to hide site pages and links to them in the navigation block on the front page.
+    // They will re-appear when in edit mode. This enables us to create public site pages without
+    // having to enable guest user.
+    if (!empty($theme->settings->hidefrontsitepages)) {
+        $customcss .= '
+            body#page-site-index:not(.editing) .activity.page.modtype_page {
+                display:none;
+            }
+            .block_navigation .type_activity.depth_3 {
+              display: none;
+            }
+            body.notloggedin .block_navigation .type_activity.depth_2 {
+              display: none;
+            }
+        ';
+    }
+    $css = theme_training_set_customcss($css, $customcss);
 
     return $css;
 }
@@ -154,28 +172,4 @@ function theme_training_get_html_for_settings(renderer_base $output, moodle_page
     }
 
     return $return;
-}
-
-/**
- * All theme functions should start with theme_training_
- * @deprecated since 2.5.1
- */
-function training_process_css() {
-    throw new coding_exception('Please call theme_'.__FUNCTION__.' instead of '.__FUNCTION__);
-}
-
-/**
- * All theme functions should start with theme_training_
- * @deprecated since 2.5.1
- */
-function training_set_logo() {
-    throw new coding_exception('Please call theme_'.__FUNCTION__.' instead of '.__FUNCTION__);
-}
-
-/**
- * All theme functions should start with theme_training_
- * @deprecated since 2.5.1
- */
-function training_set_customcss() {
-    throw new coding_exception('Please call theme_'.__FUNCTION__.' instead of '.__FUNCTION__);
 }
