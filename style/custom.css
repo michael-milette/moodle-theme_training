@@ -10,12 +10,6 @@ a.logo-container {
     display: inline-block;
     margin: 30px 0 30px 15px;
 }
-a.logo-container.banner {
-    margin: 0 0 2px 0;
-}
-a.logo-container img.logo.banner {
-    max-width: 100%;
-}
 @media screen and (max-width: 767px) {
     a.logo-container {
         margin:0 0 3px 0;
@@ -23,6 +17,12 @@ a.logo-container img.logo.banner {
     a.logo-container img.logo {
         max-width: 360px;
     }
+}
+a.logo-container.banner {
+    margin: 0 0 2px 0;
+}
+a.logo-container img.logo.banner {
+    max-width: 100%;
 }
 /* Changed navbar from fixed to inline. */
 .navbar-fixed-top, .navbar-fixed-bottom {

@@ -41,12 +41,12 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <header role="banner" class="navbar navbar-fixed-top<?php echo $html->navbarclass ?> moodle-has-zindex">
-    <?php echo $OUTPUT->navbar_home(); ?>
+    <?php echo (empty($PAGE->theme->settings->navbarabove)) ? $OUTPUT->navbar_home() : ''; ?>
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
             <?php echo $OUTPUT->navbar_button(); ?>
             <?php echo $OUTPUT->user_menu(); ?>
-            <?php if ($CFG->branch >= 32) {echo $OUTPUT->navbar_plugin_output();} ?>
+            <?php echo ($CFG->branch >= 32) ? $OUTPUT->navbar_plugin_output() : ''; ?>
             <?php echo $OUTPUT->search_box(); ?>
             <div class="nav-collapse collapse">
                 <?php echo $OUTPUT->custom_menu(); ?>
@@ -56,12 +56,11 @@ echo $OUTPUT->doctype() ?>
             </div>
         </div>
     </nav>
+    <?php echo (!empty($PAGE->theme->settings->navbarabove)) ? $OUTPUT->navbar_home() : ''; ?>
 </header>
 
 <div id="page" class="container-fluid">
-
     <?php echo $OUTPUT->full_header(); ?>
-
     <div id="page-content" class="row-fluid">
         <section id="region-main" class="span12">
             <?php

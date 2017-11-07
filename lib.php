@@ -70,7 +70,7 @@ function theme_training_process_css($css, $theme) {
             }
         ';
     }
-    
+
     // Add ability to hide site pages and links to them in the navigation block on the front page.
     // They will re-appear when in edit mode. This enables us to create public site pages without
     // having to enable guest user.

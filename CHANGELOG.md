@@ -4,7 +4,8 @@ All notable changes to this project will be documented in this file.
 ## [0.2.0] - 2017-11-06
 ### Added
 - Option to use a banner instead of a logo;
-- Option to display of course list in grid view;
+- Option to place the navbar above or below the logo / banner.
+- Option to display of course list in Masonry grid view;
 - Option to hide site pages on front page.
 
 ## [0.1.0] - 2017-11-05

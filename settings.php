@@ -58,6 +58,14 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
+    // Place Navbar above banner/logo?
+    $name = 'theme_training/navbarabove';
+    $title = get_string('navbarabove', 'theme_training');
+    $description = get_string('navbarabovedesc', 'theme_training');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
     // Invert Navbar to dark background.
     $name = 'theme_training/invert';
     $title = get_string('invert', 'theme_training');

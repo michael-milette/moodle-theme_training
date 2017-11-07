@@ -46,7 +46,7 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <header role="banner" class="navbar navbar-fixed-top moodle-has-zindex">
-    <?php echo $OUTPUT->navbar_home(false); ?>
+    <?php echo (empty($PAGE->theme->settings->navbarabove)) ? $OUTPUT->navbar_home() : ''; ?>
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
             <?php echo $OUTPUT->navbar_button(); ?>
@@ -58,6 +58,7 @@ echo $OUTPUT->doctype() ?>
             </div>
         </div>
     </nav>
+    <?php echo (!empty($PAGE->theme->settings->navbarabove)) ? $OUTPUT->navbar_home() : ''; ?>
 </header>
 
 <div id="page" class="container-fluid">

@@ -73,11 +73,12 @@ To activate, go to Site Administration > Appearance > Themes > Theme selector. C
 IMPORANT: Although we expect everything to work, this ALPHA release has not been fully tested in every situation. If you find a problem, please help by reporting it in the [Bug Tracker](http://github.com/michael-milette/moodle-theme_training/issues).
 
 Configurable settings for this theme include:
-* Dark on light and light on dark custom menu bar;
+* Customizable favicon;
 * Large and small size logos;
 * To use a banner instead of a logo;
-* Customizable favicon;
-* Display of course list in grid view;
+* Place the navbar above or below the logo / banner;
+* Dark on light and light on dark custom menu bar;
+* Display of course list in Masonry (grid view);
 * Hide site pages and links to them in the navigation block on the front page. They will re-appear when in edit mode. This enables you to create public site pages without having to enable guest user access;
 * Customizable CSS.
 

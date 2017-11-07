@@ -61,6 +61,9 @@ $string['logodesc'] = 'The standard logo is only displayed in the header of the 
 $string['smalllogo'] = 'Small logo';
 $string['smalllogodesc'] = 'The small logo is displayed in the header of all pages other than the front page and login page.<br>Tip: If you want the logo to be the same size on all pages, upload the same size logo for both the <strong>Logo</strong> and <strong>Small logo</strong>.<br>Default: If a logo is not added here, the compact logo in Appearance > Logos will be used. If that does not exist, the Site name will appear instead.';
 
+$string['navbarabove'] = 'Navbar above';
+$string['navbarabovedesc'] = 'Place navbar above logo/banner.';
+
 $string['invert'] = 'Invert navbar';
 $string['invertdesc'] = 'Swaps text and background for the navbar at the top of the page between black and white.';
 
@@ -68,10 +71,10 @@ $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
 
 $string['gridview'] = 'Masonry (grid style)';
-$string['gridviewdesc'] = 'Check this box if the course lists should be diplayed in a masonry style. When not checked, the default is full width where the course featured image is to the left of the course summary. Note that this option does not affect the <strong>Combo list</strong> listings.';
+$string['gridviewdesc'] = 'Display course lists in a masonry style. When not checked, the default is full width where the course featured image is to the left of the course summary. Note that this option does not affect the <strong>Combo list</strong> listings.';
 
 $string['hidefrontsitepages'] = 'Hide site pages on front page';
-$string['hidefrontsitepagesdesc'] = 'Check this box if you want to hide the site pages on the front page. This enables you to create publicly accessible pages without enabling guest user access.';
+$string['hidefrontsitepagesdesc'] = 'Hide the site pages on the front page. This enables you to create publicly accessible pages without enabling guest user access.';
 
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Content add to this textarea will be displayed in the footer throughout your Moodle site.<br>Tip: You can create columns in your footer by using <a href="https://getbootstrap.com/2.3.2/scaffolding.html"</a>Bootstrap Scaffolding</a>.';
