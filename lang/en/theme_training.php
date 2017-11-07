@@ -34,7 +34,7 @@ $string['choosereadme'] = '
 <h3>About</h3>
 <p>Training is a simple and easy modern looking theme uncluttered by lots of options which is great for beginners or when you just need to get something that looks great out the door quickly.</p>
 <h3>Human made</h3>
-<p>Training is based upon the Bootstrap and Clean themes, HTML5/Bootstrap 2.3 based responsive themes, which was initially created for Moodle 2.5 with the help of:<br>
+<p>Training is based upon the Bootstrap and Clean themes, HTML5/Bootstrap 2.3 based responsive themes, which were initially created for Moodle 2.5 with the help of:<br>
 Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans, Bas Brands and David Scotson.</p>
 <h3>Theme Credits</h3>
 <p>Authors: TNG Consulting Inc. - Michael Milette<br>

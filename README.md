@@ -3,7 +3,7 @@
 Training theme for Moodle
 ====================================
 ![PHP](https://img.shields.io/badge/PHP-v5.6%20%2F%20v7.0%20%2F%20v7.1-blue.svg)
-![Moodle](https://img.shields.io/badge/Moodle-v2.5%20to%20v3.4-orange.svg)
+![Moodle](https://img.shields.io/badge/Moodle-v3.1%20to%20v3.4-orange.svg)
 [![GitHub Issues](https://img.shields.io/github/issues/michael-milette/moodle-theme_training.svg)](https://github.com/michael-milette/moodle-theme_training/issues)
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-green.svg)](#contributing)
 [![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](#license)
@@ -43,7 +43,7 @@ IMPORTANT: Although we expect everything to work, this ALPHA release has not bee
 
 # Requirements
 
-This plugin requires Moodle 2.5+ from http://moodle.org/
+This plugin requires Moodle 3.1+ from http://moodle.org/
 
 [(Back to top)](#table-of-contents)
 

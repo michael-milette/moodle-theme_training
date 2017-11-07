@@ -31,6 +31,7 @@ a.logo-container img.logo.banner {
 }
 .navbar .brand {
   float: none;
+  margin-left:20px;
 }
 
 /* Add space after labels for radio buttons in feedback form. */
