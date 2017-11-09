@@ -15,10 +15,11 @@
 // along with Training Theme for Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Training theme is based on the Moodle Clean theme.
+ * Training theme is based on the Moodle Clean and Bootstrapbase themes.
  *
  * @package   theme_training
- * @copyright 2013 Moodle, moodle.org, 2017 TNG Consulting Inc. - www.tngconsulting.ca
+ * @copyright 2013 Moodle, moodle.org
+ * @copyright 2017 TNG Consulting Inc. - www.tngconsulting.ca
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

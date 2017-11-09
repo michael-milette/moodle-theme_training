@@ -17,9 +17,10 @@
 /**
  * Training theme core renderers.
  *
- * @package    theme_training
- * @copyright  2015 Frédéric Massart - FMCorz.net, 2017 TNG Consulting Inc. - www.tngconsulting.ca
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   theme_training
+ * @copyright 2015 Frédéric Massart - FMCorz.net
+ * @copyright 2017 TNG Consulting Inc. - www.tngconsulting.ca
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
@@ -29,11 +30,12 @@ require_once($CFG->dirroot . '/theme/bootstrapbase/renderers.php');
 /**
  * theme_training_core_renderer extends the theme_bootstrapbase_core_renderer class.
  *
- * @package  theme_training
- * @author   Frédéric Massart
- * @author   Michael Milette
- * @copyright  2015 Frédéric Massart - FMCorz.net, 2017 TNG Consulting Inc. - www.tngconsulting.ca
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   theme_training
+ * @author    Frédéric Massart
+ * @author    Michael Milette
+ * @copyright 2015 Frédéric Massart - FMCorz.net
+ * @copyright 2017 TNG Consulting Inc. - www.tngconsulting.ca
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class theme_training_core_renderer extends theme_bootstrapbase_core_renderer {
 
