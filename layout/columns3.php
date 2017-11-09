@@ -18,7 +18,8 @@
  * Training theme is based on the Moodle Clean theme.
  *
  * @package   theme_training
- * @copyright 2013 Moodle, moodle.org, 2017 TNG Consulting Inc. - www.tngconsulting.ca
+ * @copyright 2013 Moodle, moodle.org
+ * @copyright 2017 TNG Consulting Inc. - www.tngconsulting.ca
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -73,6 +74,7 @@ echo $OUTPUT->doctype() ?>
                     <?php
                     echo $OUTPUT->course_content_header();
                     echo $OUTPUT->main_content();
+                    echo ($CFG->branch >= 34) ? $OUTPUT->activity_navigation() : '';
                     echo $OUTPUT->course_content_footer();
                     ?>
                 </section>

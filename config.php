@@ -28,6 +28,7 @@ $THEME->name = 'training';
 
 $THEME->doctype = 'html5';
 $THEME->parents = array('bootstrapbase');
+$THEME->javascripts = array('custom');
 $THEME->sheets = array('custom');
 $THEME->yuicssmodules = array();
 $THEME->enable_dock = true;

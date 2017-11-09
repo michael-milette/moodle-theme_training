@@ -226,4 +226,16 @@ class theme_training_core_renderer extends theme_bootstrapbase_core_renderer {
         }
         return parent::favicon();
     }
+
+    /**
+     * Add Back-to-top button to the page.
+     *
+     * @return string the HTML content for the standard_end_of_body_html.
+     */
+    public function standard_end_of_body_html() {
+        $output = '<a id="back-to-top" class="bth btn-warning" href="#"><i class="icon-arrow-up"></i> ' .
+                get_string('top') . '</a>';
+        $output .= parent::standard_end_of_body_html();
+        return ($output);
+    }
 }

@@ -160,6 +160,7 @@ Some of the features we are considering for future releases include:
 * Ability to add a background image.
 * Ability to specify the name of the site as text (currently needs to be part of the logo).
 * More accessibility improvements.
+* Customizable favicon. (only partially implemented at the moment)
 
 If you could use any of these features, or have other requirements, consider contributing or hiring us to accelerate development.
 

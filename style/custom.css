@@ -202,6 +202,26 @@ a.dimmed, a.dimmed:link, a.dimmed:visited, a.dimmed_text, a.dimmed_text:link, a.
     background-color: #fff;
 }
 
+/* Back to top button */
+#back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 5%;
+    display: none;
+    z-index: 99;
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.25);
+    box-shadow: 0 0 1px #FFF;
+    transition: all 0.3s ease 0s;
+    padding: 0 10px;
+}
+
 /* Custom CSS Settings
 -------------------------*/
 [[setting:customcss]]

@@ -60,12 +60,15 @@ echo $OUTPUT->doctype() ?>
 </header>
 
 <div id="page" class="container-fluid">
+
     <?php echo $OUTPUT->full_header(); ?>
+
     <div id="page-content" class="row-fluid">
         <section id="region-main" class="span12">
             <?php
             echo $OUTPUT->course_content_header();
             echo $OUTPUT->main_content();
+            echo ($CFG->branch >= 34) ? $OUTPUT->activity_navigation() : '';
             echo $OUTPUT->course_content_footer();
             ?>
         </section>
