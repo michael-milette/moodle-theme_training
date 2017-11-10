@@ -16,19 +16,25 @@
 /**
  * JavaScript library for Training theme.
  *
+ * @module    moodle-theme_training
  * @package   theme_training
  * @copyright 2017 TNG Consulting Inc. - www.tngconsulting.ca
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
  */
 
 /**
  * Show Back to Top button when the user scrolls down 30px from the top of the page.
+ *
+ * @method themeTrainingScrollToTop
  */
-function theme_training_scrolltotop() {
+function themeTrainingScrollToTop() {
     if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
         document.getElementById("back-to-top").style.display = "inline-block";
     } else {
         document.getElementById("back-to-top").style.display = "none";
     }
 }
-window.onscroll = function() {theme_training_scrolltotop()};
+window.onscroll = function() {
+    themeTrainingScrollToTop();
+};

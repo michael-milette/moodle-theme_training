@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2017110600; // Based on Clean version 2016120500.
+$plugin->version   = 2017110900; // Based on Clean version 2016120500.
 $plugin->requires  = 2016052300; // Moodle 3.1.0.
 $plugin->component = 'theme_training';
 $plugin->release = '0.2.0';
