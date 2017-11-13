@@ -126,7 +126,7 @@ function theme_training_pluginfile($course, $cm, $context, $filearea, $args, $fo
  * @return string The CSS which now contains our custom CSS.
  */
 function theme_training_set_customcss($css, $customcss) {
-    $tag = '[[setting:customcss]]';
+    $tag = '/* setting-customcss */';
     $replacement = $customcss;
     if (is_null($replacement)) {
         $replacement = '';
