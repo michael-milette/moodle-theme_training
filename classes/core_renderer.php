@@ -189,24 +189,33 @@ class theme_training_core_renderer extends theme_bootstrapbase_core_renderer {
     }
 
     /**
-     * Applies Moodle filters to custom menu.
+     * Applies Moodle filters to custom menu and custom user menu.
      *
      * @param string $custommenuitems Current custom menu object.
      * @return Rendered custom_menu that has been filtered.
      */
     public function custom_menu($custommenuitems = '') {
-        global $CFG;
+        global $CFG, $PAGE;
 
+        // Don't apply auto-linking filters.
+        $filtermanager = filter_manager::instance();
+        $filteroptions = array('originalformat' => FORMAT_HTML, 'noclean' => true);
+        $skipfilters = array('activitynames', 'data', 'glossary', 'sectionnames', 'bookchapters');
+
+        // Filter custom user menu.
+        // Don't filter custom user menu on the settings page. Otherwise it ends up
+        // filtering the edit field itself resulting in a loss of the tag.
+        if ($PAGE->pagetype != 'admin-setting-themesettings' && stripos($CFG->customusermenuitems, '{') !== false) {
+            $CFG->customusermenuitems = $filtermanager->filter_text($CFG->customusermenuitems, $PAGE->context,
+                    $filteroptions, $skipfilters);
+        }
+
+        // Filter custom menu.
         if (empty($custommenuitems) && !empty($CFG->custommenuitems)) {
-            $custommenuitems = format_text($CFG->custommenuitems, FORMAT_MOODLE, array(
-                    'noclean' => true,
-                    'para' => false,
-                    'newlines' => false,
-                    'context' => context_course::instance(SITEID)
-                ));
-            // Hack: This will remove any HTML injected by other filters (like auto-linking).
-            // To do: Find a better way to avoid some filters.
-            $custommenuitems = strip_tags($custommenuitems);
+            $custommenuitems = $CFG->custommenuitems;
+        }
+        if (stripos($custommenuitems, '{') !== false) {
+            $custommenuitems = $filtermanager->filter_text($custommenuitems, $PAGE->context, $filteroptions, $skipfilters);
         }
         $custommenu = new custom_menu($custommenuitems, current_language());
         return $this->render_custom_menu($custommenu);
