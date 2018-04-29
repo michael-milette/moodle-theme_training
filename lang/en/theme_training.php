@@ -45,6 +45,7 @@ Website: <a href="http://www.tngconsulting.ca">www.tngconsulting.ca</a>
 </div></div>';
 
 $string['pluginname'] = 'Training';
+$string['privacy:metadata'] = 'The Training theme does not store any personal data about any user.';
 $string['configtitle'] = 'Training';
 
 $string['favicon'] = 'Favicon';
