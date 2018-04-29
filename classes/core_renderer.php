@@ -92,9 +92,14 @@ class theme_training_core_renderer extends theme_bootstrapbase_core_renderer {
      * @return string The site name or the logo or both depending on the theme settings.
      */
     public function navbar_home($returnlink = true) {
-        global $CFG, $SITE;
+        global $CFG, $SITE, $PAGE;
 
-        $imageurl = $this->get_logo_url(null, 35);
+        if ($PAGE->pagelayout == 'frontpage' || $PAGE->pagelayout == 'login') {
+            $imageurl = $this->get_logo_url();
+        } else {
+            $imageurl = $this->get_compact_logo_url();
+        }
+
         if (!$this->should_render_logo() || empty($imageurl)) {
             // If there is no logo we always show the site name.
             return $this->get_home_ref($returnlink);
