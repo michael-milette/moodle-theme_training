@@ -68,7 +68,7 @@ class theme_training_core_renderer extends theme_bootstrapbase_core_renderer {
         global $PAGE;
 
         // Render the full size logo on the front page or login page.
-        // All other pages will get the small logo to reduce unncessary scrolling.
+        // All other pages will get the small logo to reduce unnecessary scrolling.
         // A logo must be defined in the theme or the site.
         // Handling of logo size for mobile devices is done through CSS.
         if ($PAGE->pagelayout == 'frontpage' || $PAGE->pagelayout == 'login') {

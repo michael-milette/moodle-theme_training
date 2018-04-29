@@ -49,6 +49,9 @@ This plugin requires Moodle 3.1+ from http://moodle.org/
 
 # Download Training theme for Moodle
 
+The most recent BETA release can be found at:
+https://moodle.org/plugins/theme_training
+
 The most recent DEVELOPMENT release can be found at:
 https://github.com/michael-milette/moodle-theme_training
 
@@ -60,7 +63,7 @@ Install the plugin, like any other plugin, to the following folder:
 
     /theme/training
 
-See https://docs.moodle.org/34/en/Installing_a_new_theme for details on installing Moodle plugins.
+See https://docs.moodle.org/35/en/Installing_a_new_theme for details on installing Moodle plugins.
 
 In order for the themes to work, it must be installed and activated.
 
@@ -183,7 +186,7 @@ http://github.com/michael-milette/moodle-theme_training
 
 # License
 
-Copyright © 2017 TNG Consulting Inc. - http://www.tngconsulting.ca/
+Copyright © 2017-2018 TNG Consulting Inc. - http://www.tngconsulting.ca/
 
 This file is part of Training theme for Moodle - http://moodle.org/
 

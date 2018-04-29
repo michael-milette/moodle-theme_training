@@ -19,7 +19,7 @@
  *
  * @package   theme_training
  * @copyright 2013 Moodle, moodle.org
- * @copyright 2017 TNG Consulting Inc. - www.tngconsulting.ca
+ * @copyright 2017-2018 TNG Consulting Inc. - www.tngconsulting.ca
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
