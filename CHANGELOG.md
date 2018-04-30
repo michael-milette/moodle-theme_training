@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 - Copyright notice to include 2018.
 - Remove "How to Apply These Terms to Your New Programs" section at the end of LICENCE.txt.
 - Fixed support for small logo.
+- Fixed CSS coding style issues.
 
 ## [0.2.0] - 2017-11-09
 ### Added
