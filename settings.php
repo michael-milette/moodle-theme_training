@@ -26,12 +26,12 @@
 defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
-
-    // Favicon file setting.
+    // Favicon upload.
     $name = 'theme_training/favicon';
     $title = get_string('favicon', 'theme_training');
     $description = get_string('favicondesc', 'theme_training');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'favicon');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'favicon', 0,
+        array('maxfiles' => 1, 'accepted_types' => array('.ico', '.png')));
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
@@ -47,7 +47,8 @@ if ($ADMIN->fulltree) {
     $name = 'theme_training/logo';
     $title = get_string('logo', 'theme_training');
     $description = get_string('logodesc', 'theme_training');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo', 0,
+        array('maxfiles' => 1, 'accepted_types' => array('.jpg', '.png')));
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
@@ -55,7 +56,8 @@ if ($ADMIN->fulltree) {
     $name = 'theme_training/smalllogo';
     $title = get_string('smalllogo', 'theme_training');
     $description = get_string('smalllogodesc', 'theme_training');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'smalllogo');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'smalllogo', 0,
+        array('maxfiles' => 1, 'accepted_types' => array('.jpg', '.png')));
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 

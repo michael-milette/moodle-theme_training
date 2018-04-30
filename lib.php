@@ -106,13 +106,17 @@ function theme_training_process_css($css, $theme) {
  * @return bool
  */
 function theme_training_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
-    if ($context->contextlevel == CONTEXT_SYSTEM and ($filearea === 'logo' || $filearea === 'smalllogo')) {
+    if ($context->contextlevel == CONTEXT_SYSTEM) {
         $theme = theme_config::load('training');
         // By default, theme files must be cache-able by both browsers and proxies.
         if (!array_key_exists('cacheability', $options)) {
             $options['cacheability'] = 'public';
         }
-        return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+        if (in_array($filearea, array('logo', 'smalllogo', 'favicon', 'loginbackgroundimage', 'fontfiles', 'imageareaitems'))) {
+            return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+        } else {
+            send_file_not_found();
+        }
     } else {
         send_file_not_found();
     }

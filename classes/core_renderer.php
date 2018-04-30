@@ -229,16 +229,11 @@ class theme_training_core_renderer extends theme_bootstrapbase_core_renderer {
     /**
      * Returns the URL for the favicon.
      *
-     * @return string The favicon URL
+     * @return string the favicon URL.
      */
     public function favicon() {
-        global $CFG;
         if (!empty($this->page->theme->settings->favicon)) {
-            $url = $this->page->theme->setting_file_url('favicon', 'favicon');
-            // Get a URL suitable for moodle_url.
-            $relativebaseurl = preg_replace('|^https?://|i', '//', $CFG->wwwroot);
-            $url = str_replace($relativebaseurl, '', $url);
-            return new moodle_url($url);
+            return $this->page->theme->setting_file_url('favicon', 'favicon');
         }
         return parent::favicon();
     }

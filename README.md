@@ -129,7 +129,7 @@ http://github.com/michael-milette/moodle-theme_training
 
 ## Frequently Asked Questions
 
-IMPORANT: Although we expect everything to work, this ALPHA release has not been fully tested in every situation. If you find a problem, please help by reporting it in the [Bug Tracker](http://github.com/michael-milette/moodle-theme_training/issues).
+IMPORANT: Although we expect everything to work, this BETA release has not been fully tested in every situation. If you find a problem, please help by reporting it in the [Bug Tracker](http://github.com/michael-milette/moodle-theme_training/issues).
 
 ### Why does my course grid view look un-even?
 
@@ -159,11 +159,9 @@ Michael Milette - Author and Lead Developer
 
 Some of the features we are considering for future releases include:
 
-* Fix the configurable favicon (known issue - currently only works in courses).
 * Ability to add a background image.
-* Ability to specify the name of the site as text (currently needs to be part of the logo).
+* Ability to specify the name of the site as text (currently needs to be part of the logo but ALT text is included).
 * More accessibility improvements.
-* Customizable favicon. (only partially implemented at the moment)
 
 If you could use any of these features, or have other requirements, consider contributing or hiring us to accelerate development.
 
