@@ -25,10 +25,10 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2018042900; // Based on Clean version 2016120500.
+$plugin->version   = 2018052200; // Based on Clean version 2016120500.
 $plugin->requires  = 2016052300; // Moodle 3.1.0.
 $plugin->component = 'theme_training';
-$plugin->release = '0.3.0';
+$plugin->release = '0.3.1';
 $plugin->maturity = MATURITY_BETA;
 $plugin->dependencies = array(
     'theme_bootstrapbase'  => 2016052300,

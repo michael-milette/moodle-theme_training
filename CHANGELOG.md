@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.3.1] - 2018-05-22
+### Added
+- Support for Privacy API.
+
 ## [0.3.0] - 2018-04-29
 ### Added
 - privacy:metadata string.
